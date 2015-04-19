@@ -17,7 +17,7 @@ class ArgumentParser
         return $output;
     }
     
-    private function parseArgument(&$input, Arguments &$output)
+    private function parseArgument(&$input, Arguments $output)
     {
         $current = current($input);
         switch ($current) {
@@ -31,12 +31,12 @@ class ArgumentParser
                 $output->configuration = next($input);
                 break;
             default:
-                $this->parseSuiteArguments($input, $output);
+                $this->parseSuiteArgument($input, $output);
                 break;
         }
     }
     
-    private function parseSuiteArguments(&$input, Arguments &$output)
+    private function parseSuiteArgument(&$input, Arguments $output)
     {
         $current = current($input);
         if (preg_match('/^--run=/', $current)) {
