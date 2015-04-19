@@ -1,20 +1,21 @@
-#!/usr/bin/env php
 <?php
 
 namespace Foogile\NetBeans\PhpUnit;
 
 require 'vendor/autoload.php';
 
-$localVagrantPath = realpath(__DIR__ . '/../../');
+$localVagrantPath = realpath(__DIR__ . '/../../../');
 $pathMappings = array ($localVagrantPath => '/vagrant');
 $tmpPath = '/vagrant/tmp';
-$phpunit = '/vagrant/vendor/bin/phpunit';
+$remotePhpUnitPath = '/vagrant/vendor/bin/phpunit';
+$remoteVagrantPath = '/vagrant';
 
 $testRunner = new TestRunner(
     new ArgumentParser(),
     new ArgumentMapper($tmpPath, $pathMappings),
     new LogMapper(array_flip($pathMappings)),
-    new VagrantRemoteHost($localVagrantPath, $remotePhpUnitPath)
+    new VagrantRemoteHost($localVagrantPath, $remoteVagrantPath),
+    $remotePhpUnitPath
 );
 
-$testrunner->run($argv);
+$testRunner->run($argv);

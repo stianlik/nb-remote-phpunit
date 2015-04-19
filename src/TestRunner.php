@@ -46,14 +46,16 @@ class TestRunner
     public function run($argv)
     {
         // Parse arguments
-        $arguments = $this->parser->parse($argv);
+        $arguments = $this->argumentParser->parse($argv);
         $remoteArguments = $this->argumentMapper->toRemote($arguments);
         
         // Transfer NetBeans test suite
         $this->remote->put($arguments->suitePath, $remoteArguments->suitePath);
         
         // Execute commands
-        $this->remote->exec($this->buildCommand($arguments));
+        $command = $this->buildCommand($remoteArguments);
+        echo "\n\n$command\n\n";
+        $this->remote->exec($command);
         
         // Translate and save log files
         $this->remote->get($remoteArguments->logJunit, $arguments->logJunit);

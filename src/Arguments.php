@@ -14,8 +14,8 @@ class Arguments
     {
         $parts = [];
         
-        if ($this->log) {
-            $parts[] = "--log-junit {$this->log}";
+        if ($this->logJunit) {
+            $parts[] = "--log-junit {$this->logJunit}";
         }
         
         if ($this->colors) {

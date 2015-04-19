@@ -31,7 +31,8 @@ class ArgumentMapper
         $out->configuration = $this->getRemotePath($arguments->configuration);
         $out->logJunit = $this->getRemoteTemporaryPath(self::LOG_NAME);
         $out->suitePath = $this->getRemoteTemporaryPath(self::SUITE_NAME);
-        $out->suiteArguments = array_map(array($this, 'remotePath'), $arguments->suiteArguments);
+        $out->suiteArguments = array_map(array($this, 'getRemotePath'), $arguments->suiteArguments);
+        return $out;
     }
     
     private function getRemotePath($localPath)
