@@ -9,7 +9,7 @@ remote hosts.
 
 The package should be installed using composer:
 
-```PHP
+```Shell
 compose require foogile/nb-remote-phpunit
 ```
 
@@ -19,7 +19,7 @@ Subsequent sections desribe more specific installations.
 
 Default Vagrant test scripts can be installed using the following commands:
 
-```PHP
+```Shell
 vagrant ssh;
 cd /vagrant
 compose require foogile/nb-remote-phpunit
