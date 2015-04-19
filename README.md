@@ -62,7 +62,7 @@ class SSHRemoteHost implements RemoteHostInterface
 
     public function exec($command)
     {
-        exec("ssh -e myhost.com '$command'");
+        exec("ssh myhost.com '$command'");
     }
 ```
 
