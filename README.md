@@ -60,6 +60,11 @@ class SSHRemoteHost implements RemoteHostInterface
         exec("scp myhost.com:$remotePath $localPath");
     }
 
+    public function delete($remotePath)
+    {
+        exec("ssh myhost.com 'rm $remotePath'");
+    }
+
     public function exec($command)
     {
         exec("ssh myhost.com '$command'");

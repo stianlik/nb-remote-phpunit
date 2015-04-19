@@ -19,8 +19,8 @@ class ArgumentParser
     
     private function parseArgument(&$input, Arguments &$output)
     {
-        $cur = current($input);
-        switch ($cur) {
+        $current = current($input);
+        switch ($current) {
             case '--log-junit':
                 $output->logJunit = next($input);
                 break;
@@ -31,7 +31,6 @@ class ArgumentParser
                 $output->configuration = next($input);
                 break;
             default:
-                $output->suitePath = current($input);
                 $this->parseSuiteArguments($input, $output);
                 break;
         }
@@ -39,8 +38,11 @@ class ArgumentParser
     
     private function parseSuiteArguments(&$input, Arguments &$output)
     {
-        while (next($input)) {
-            $output->suiteArguments[] = substr(current($input), 6);
+        $current = current($input);
+        if (preg_match('/^--run=/', $current)) {
+           $output->suiteArguments[] = substr($current, 6);
+        } else if (!preg_match('/^--?/', $current)) {
+           $output->suitePath = $current;
         }
     }
 }

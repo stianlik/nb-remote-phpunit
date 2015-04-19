@@ -61,6 +61,9 @@ class TestRunner
         $this->remote->get($remoteArguments->logJunit, $arguments->logJunit);
         $log = $this->read($arguments->logJunit);
         $this->write($arguments->logJunit, $this->logMapper->toLocal($log));
+        
+        // Cleanup
+        $this->remote->delete($remoteArguments->logJunit);
     }
         
     protected function buildCommand($arguments)

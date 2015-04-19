@@ -5,7 +5,7 @@ namespace Foogile\NetBeans\PhpUnit;
 class Arguments
 {
     public $logJunit;
-    public $colors;
+    public $colors = false;
     public $configuration;
     public $suitePath;
     public $suiteArguments = array();

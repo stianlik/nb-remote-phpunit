@@ -32,4 +32,9 @@ class VagrantRemoteHost implements RemoteHostInterface
     {
         return str_replace($this->remoteVagrantPath, $this->localVagrantPath, $remote);
     }
+
+    public function delete($remotePath)
+    {
+        $this->exec("rm $remotePath");
+    }
 }
