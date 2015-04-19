@@ -1,0 +1,22 @@
+{
+    "name": "foogile/nb-remote-phpunit",
+    "description": "Execute PHPUnit tests over ssh using NetBeans",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Stian Liknes",
+            "email": "stianlik@gmail.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "~4.6"
+    },
+	"autoload": {
+		"psr-4": {
+			"Foogile\\NetBeans\\PhpUnit\\": "src"
+		}
+	},
+	"bin": {
+	    [ "bin/phpunit-vagrant" ]
+	}
+}
