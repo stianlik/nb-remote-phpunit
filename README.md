@@ -5,7 +5,7 @@ host. Mainly developed to make Vagrant environments more convenient to
 work with, but it can easily be extended to communicate with other
 remote hosts.
 
-# Installation
+## Installation
 
 The package should be installed using composer:
 
@@ -15,7 +15,7 @@ compose require foogile/nb-remote-phpunit
 
 Subsequent sections desribe more specific installations.
 
-## Vagrant
+### Vagrant
 
 Default Vagrant test scripts can be installed using the following commands:
 
@@ -25,11 +25,11 @@ cd /vagrant
 compose require foogile/nb-remote-phpunit
 ```
 
-## Other
+### Other
 
 See "Custom test runner".
 
-# Usage
+## Usage
 
 Activate remote execution in NetBeans 8 as follows:
 
@@ -70,3 +70,7 @@ See `netbeans/phpunit-vagrant.php` for an example of a custom NetBeans
 PHPUnit script.
 
 Pull requests are welcome :)
+
+## Credits
+
+Based on the blog post [Running PHPUnit tests on a VM, from NetBeans](http://www.brianfenton.us/2012/03/running-phpunit-tests-on-vm-from.htm).
