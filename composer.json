@@ -1,7 +1,7 @@
 {
     "name": "foogile/nb-remote-phpunit",
     "description": "Execute PHPUnit tests over ssh using NetBeans",
-    "license": "GPLv3",
+    "license": "GPL-3.0",
     "authors": [
         {
             "name": "Stian Liknes",
@@ -16,7 +16,8 @@
 			"Foogile\\NetBeans\\PhpUnit\\": "src"
 		}
 	},
-	"bin": {
-	    [ "bin/phpunit-vagrant" ]
-	}
+    "bin": [
+        "bin/phpunit-vagrant"
+    ]
+    
 }
