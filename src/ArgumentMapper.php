@@ -14,7 +14,7 @@ class ArgumentMapper
      * @param string $temporaryPath Temporary path on remote host
      * @param array $pathMappings Associative array of path mappings. Example: [ "/local/path" => "/remote/path" ]
      */
-    public function __construct($temporaryPath, $pathMappings = [])
+    public function __construct($temporaryPath, $pathMappings = array())
     {
         $this->pathMappings = $pathMappings;
         $this->temporaryPath = $temporaryPath;

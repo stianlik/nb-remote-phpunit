@@ -12,7 +12,7 @@ class Arguments
     
     public function __toString()
     {
-        $parts = [];
+        $parts = array();
         
         if ($this->logJunit) {
             $parts[] = "--log-junit {$this->logJunit}";
