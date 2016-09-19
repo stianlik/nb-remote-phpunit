@@ -78,4 +78,4 @@ Pull requests are welcome :)
 
 ## Credits
 
-Based on the blog post [Running PHPUnit tests on a VM, from NetBeans](http://www.brianfenton.us/2012/03/running-phpunit-tests-on-vm-from.html).
+Based on the blog post [Running PHPUnit tests on a VM, from NetBeans](https://www.brianfenton.us/blog/2012/03/03/running-phpunit-tests-on-vm-from/).
